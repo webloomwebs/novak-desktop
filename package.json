@@ -1,0 +1,43 @@
+{
+  "name": "novak-desktop",
+  "version": "1.0.0",
+  "description": "Novak para Windows",
+  "main": "main.js",
+  "author": "Novak",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --publish never"
+  },
+  "build": {
+    "appId": "com.novakcompany.calendario.desktop",
+    "productName": "Novak",
+    "directories": {
+      "output": "salida"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "icono.png"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icono.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Novak"
+    },
+    "compression": "maximum",
+    "electronLanguages": [
+      "es",
+      "en-US"
+    ],
+    "removePackageScripts": true
+  }
+}
